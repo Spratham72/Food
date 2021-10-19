@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="food"></div>
+</body>
+
+<script type="module">
+import navbar from "./navbar.js";
+import {search,getData,inpt,debounce} from "./search.js";
+window.getData = getData;
+window.inpt = inpt;
+window.debounce = debounce;
+let nav=document.getElementById("navbar");
+nav.innerHTML=navbar();
+//console.log(navbar)
+search(`https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian`)
+
+
+</script>
+
+</html>
